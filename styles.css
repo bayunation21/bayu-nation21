@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5em;
+  }
+  
+  .banner {
+    background-color: #00aa13;
+    padding: 50px 0;
+  }
+  
+  .banner h1 {
+    font-size: 3em;
+    font-weight: bold;
+  }
+  
+  .services .service {
+    padding: 20px;
+  }
+  
+  .services .service h4 {
+    margin-top: 10px;
+  }
+  
