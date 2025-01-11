@@ -3,61 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bayu Aswari</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <title>Contoh Halaman Interaktif</title>
+  <style>
+    /* Reset dan dasar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header */
+    .header {
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .header h1 {
+      font-size: 24px;
+    }
+
+    /* Navigasi */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      background-color: #222;
+      width: 100%;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background-color 0.3s, transform 0.3s;
+      margin: 0 5px;
+    }
+    .navbar a:hover {
+      background-color: #555;
+      border-radius: 5px;
+      transform: scale(1.1);
+    }
+
+    /* Form Login */
+    .login-form {
+      display: flex;
+      gap: 5px;
+    }
+    .login-form input {
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .login-form button {
+      padding: 5px 10px;
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .login-form button:hover {
+      background-color: #ff8533;
+    }
+
+    /* Banner Promosi */
+    .banner {
+      background-image: linear-gradient(to right, #ff6600, #ff4500);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      border-radius: 8px;
+      margin: 20px 0;
+      width: 80%;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .banner h2 {
+      font-size: 32px;
+    }
+    .banner p {
+      font-size: 18px;
+    }
+
+    /* Animasi */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Tombol Chat */
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: red;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .chat-btn:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Bay sloto</h1>
+    <h2>Dijamin JP
+        <h3>terpecaya diseluruh indonesia</h3>
+    </h2>
+    <div class="login-form">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Gojek</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Offers</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Produk</a>
+    <a href="#">Layanan</a>
+    <a href="#">Kontak</a>
+    <a href="#">Tentang Kami</a>
+  </div>
 
-  <!-- Banner -->
-  <header class="banner text-center text-white">
-    <h1>Welcome to my web</h1>
-    <h2>bayu aswari</h2>
-    <p>One App, Many Services</p>
-    <button class="btn btn-success">Get Started</button>
-  </header>
+  <!-- Banner Promosi -->
+  <div class="banner">
+    <h2>Bonus Spesial hingga 220%</h2>
+    <p>Raih keseruan dan peluang menang di semua permainan kami!</p>
+  </div>
 
-  <!-- Services Section -->
-  <section class="services container text-center my-5">
-    <div class="row">
-      <div class="col-md-3 service">
-        <i class="fas fa-motorcycle fa-3x"></i>
-        <h4>GoRide</h4>
-      </div>
-      <div class="col-md-3 service">
-        <i class="fas fa-car fa-3x"></i>
-        <h4>GoCar</h4>
-      </div>
-      <div class="col-md-3 service">
-        <i class="fas fa-box fa-3x"></i>
-        <h4>GoSend</h4>
-      </div>
-      <div class="col-md-3 service">
-        <i class="fas fa-utensils fa-3x"></i>
-        <h4>GoFood</h4>
-      </div>
-    </div>
-  </section>
+  <!-- Tombol Chat -->
+  <button class="chat-btn" onclick="openChat()">Chat</button>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
+  <script>
+    // Fungsi untuk tombol chat
+    function openChat() {
+      alert("Fitur chat belum tersedia.");
+    }
+
+    // Fungsi untuk login sederhana
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (username && password) {
+        alert(`Selamat datang, ${username}!`);
+      } else {
+        alert("Harap isi username dan password.");
+      }
+    }
+  </script>
+
 </body>
 </html>
